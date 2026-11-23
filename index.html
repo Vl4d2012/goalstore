@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GoalStore - Magazin de fotbal. Ghete, echipament și accesorii.">
+    <title>GoalStore | Football Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">GOAL<span>STORE</span></a>
+
+    <nav class="navigation">
+        <a href="#">ACASĂ</a>
+        <a href="#produse">GHETE</a>
+        <a href="#categorii">CATEGORII</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button class="cart-button" id="open-cart">
+        🛒 Coș (<span id="cart-count">0</span>)
+    </button>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Play<br><span>BIGGER</span></h1>
+        <p>Ghete de top. Performanță maximă.</p>
+        <a href="#produse" class="main-button">Vezi colecția</a>
+    </section>
+
+    <section class="categories" id="categorii">
+        <button class="category active" data-category="Toate">TOATE</button>
+        <button class="category" data-category="Ghete">GHETE</button>
+        <button class="category" data-category="Echipament">ECHIPAMENT</button>
+        <button class="category" data-category="Accesorii">ACCESORII</button>
+        <button class="category" data-category="Portari">PORTARI</button>
+        <button class="category" data-category="Genti">GENȚI</button>
+        <button class="category" data-category="Promotii">PROMOȚII</button>
+    </section>
+
+    <section class="products-section" id="produse">
+        <div class="section-heading">
+            <h2>PRODUSE GOALSTORE</h2>
+            <input
+                type="search"
+                id="search"
+                placeholder="Caută un produs..."
+                aria-label="Caută produse"
+            >
+        </div>
+
+        <div class="product-grid" id="product-list"></div>
+
+        <p class="empty-message" id="empty-message" hidden>
+            Nu am găsit produse.
+        </p>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="footer-logo">GOALSTORE</div>
+
+    <div>
+        <h3>DESPRE NOI</h3>
+        <p>Despre GoalStore</p>
+        <p>Contact</p>
+        <p>Termeni și condiții</p>
+    </div>
+
+    <div>
+        <h3>AJUTOR</h3>
+        <p>Livrare</p>
+        <p>Retur</p>
+        <p>Întrebări frecvente</p>
+    </div>
+
+    <div>
+        <h3>CONTACT</h3>
+        <p>R. Moldova</p>
+        <p>goalstore@gmail.com</p>
+    </div>
+</footer>
+
+<!-- DETALII PRODUS -->
+<div class="overlay" id="product-modal">
+    <div class="modal product-modal">
+        <button class="close-button" data-close="product-modal">×</button>
+        <div id="product-details"></div>
+    </div>
+</div>
+
+<!-- COȘ -->
+<div class="overlay" id="cart-modal">
+    <div class="modal cart-modal">
+        <button class="close-button" data-close="cart-modal">×</button>
+        <h2>COȘUL MEU</h2>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+            Total: <strong id="cart-total">0 MDL</strong>
+        </div>
+
+        <button class="main-button full-button" id="checkout-button">
+            FINALIZEAZĂ COMANDA
+        </button>
+    </div>
+</div>
+
+<!-- FINALIZARE COMANDĂ -->
+<div class="overlay" id="checkout-modal">
+    <div class="modal">
+        <button class="close-button" data-close="checkout-modal">×</button>
+        <h2>FINALIZARE COMANDĂ</h2>
+
+        <form id="checkout-form">
+            <label for="customer-name">Nume și prenume</label>
+            <input id="customer-name" required minlength="3">
+
+            <label for="customer-phone">Telefon</label>
+            <input id="customer-phone" type="tel" required>
+
+            <label for="customer-address">Adresa de livrare</label>
+            <input id="customer-address" required>
+
+            <button type="submit" class="main-button full-button">
+                CONFIRMĂ COMANDA DEMO
+            </button>
+        </form>
+
+        <p class="notice">
+            Comandă demonstrativă. Nu se efectuează plăți și nu se trimite o comandă reală.
+        </p>
+
+        <div id="order-result"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
